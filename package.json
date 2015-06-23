@@ -1,0 +1,18 @@
+{
+  "name": "gulp-boilerplate",
+  "version": "0.1.0",
+  "description": "A boilerplate to quickly build projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dopatraman/gulp-boilerplate"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "del": "^1.1.1"
+  },
+  "license": "MIT"
+}
