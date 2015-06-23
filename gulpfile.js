@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var del = require('del');
+var babel = require('gulp-babel');
 
 var src = {
 	build: ["./src/**/*.*"]
@@ -21,6 +22,7 @@ gulp.task('concat', ['clean'], function() {
 	gulp.src(src.build, {
 		base: './src'
 	})
+	.pipe(babel())
 	.pipe(concat('built.js'))
 	.pipe(gulp.dest(out.build));
 });
