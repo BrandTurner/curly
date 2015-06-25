@@ -1,0 +1,13 @@
+extends app/shared/markup/layout
+
+block styles
+	for styletag in styletags
+		link(rel="stylesheet", href=styletag.path)
+
+block scripts
+	for scripttag in scripttags
+		script(type="text/javascript", src=scripttag.path)
+
+block content
+	.app
+		include app/components/seed/view

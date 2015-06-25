@@ -1,11 +1,18 @@
 // Require gulp deps
+var path = require('path');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var del = require('del');
 var babel = require('gulp-babel');
+var jade = require('gulp-jade');
+var data = require('gulp-data');
 
 var src = {
-	build: ["./src/**/*.*"]
+	build: [
+	"./src/app/shared/**/*.js", 
+	"./src/app/components/**/*.js",
+	"./src/app/app.js"],
+	jade: ["./src/index.jade"]
 };
 
 var out = {
@@ -27,6 +34,26 @@ gulp.task('concat', ['clean'], function() {
 	.pipe(gulp.dest(out.build));
 });
 
-gulp.task('build', ['clean','concat']);
+gulp.task('buildjade', function() {
+	gulp.src(src.jade)
+	.pipe(data(function(file) {
+		return {
+			fileName: path.basename(file.path)
+		}
+	}))
+	.pipe(jade({
+		locals: {
+			styletags: [{
+				path: "http://css.com"
+			}],
+			scripttags: [{
+				path: "http://js.com"
+			}]
+		},
+		pretty:true
+	}))
+	.pipe(gulp.dest(out.build));
+});
 
-gulp.task('default', ['build']);
+gulp.task('build', ['clean','concat']);
+gulp.task('default', ['build', 'buildjade']);
