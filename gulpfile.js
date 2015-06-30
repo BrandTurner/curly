@@ -11,7 +11,8 @@ var src = {
 	build: [
 	"./src/app/shared/**/*.js", 
 	"./src/app/components/**/*.js",
-	"./src/app/app.js"],
+	"./src/app/app.js",
+	"./src/assets/**/*.*],
 	jade: ["./src/index.jade"]
 };
 
