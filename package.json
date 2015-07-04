@@ -10,7 +10,8 @@
     "test": "mocha --compilers js:babel/register"  
   },
   "dependencies": {
-    "glob": "^5.0.10"
+    "glob": "^5.0.10",
+    "nib": "^1.1.0"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
