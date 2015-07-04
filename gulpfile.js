@@ -45,10 +45,10 @@ gulp.task('buildjade', function() {
 	.pipe(jade({
 		locals: {
 			styletags: [{
-				path: "http://css.com"
+				path: "assets/styles/rug/rug.built.css"
 			}],
 			scripttags: [{
-				path: "http://js.com"
+				path: "https://code.jquery.com/jquery-2.1.4.min.js"
 			}]
 		},
 		pretty:true
