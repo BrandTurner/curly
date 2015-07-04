@@ -20,8 +20,6 @@
   width: 100%;
   min-width: 320px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .row:before,
 .row:after {
