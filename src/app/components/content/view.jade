@@ -1,14 +1,28 @@
 extends ../../shared/markup/component
 
 block style
-	//- putting this as a placeholder for now
-	//- so the compiler wont bark at me
-	link(rel="stylesheeet")
+  //- putting this as a placeholder for now
+  //- so the compiler wont bark at me
+  link(rel="stylesheet")
 
 block script
-	//- putting this as a placeholder for now
-	//- so the compiler wont bark at me
-	script(type="text/javascript")
+  //- putting this as a placeholder for now
+  //- so the compiler wont bark at me
+  script(type="text/javascript")
 
 block markup
-  .ornbar
+  .bgIsland
+  .content
+    .row
+      .ten.centered
+        .row
+          .six
+            .title.uppercase Think
+            .title.uppercase Make
+            .title.uppercase Write
+            .title.uppercase Speak
+          .eight
+            .ten.centered
+              .panel.hide
+                .header.uppercase Think
+                .content Hello
