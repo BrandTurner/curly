@@ -1,5 +1,6 @@
 // Require gulp deps
 var path = require('path');
+var nib = require('nib');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var del = require('del');
@@ -40,28 +41,28 @@ gulp.task('clean', function(cb) {
 // 	.pipe(gulp.dest(out.build));
 // });
 
-gulp.task('font', function() {
+gulp.task('font', ['clean'], function() {
   gulp.src(src.fonts)
   .pipe(gulp.dest(out.build));
 })
 
-gulp.task('image', function(){
+gulp.task('image', ['clean'], function(){
   gulp.src(src.images)
   .pipe(gulp.dest(out.build));
 });
 
-gulp.task('copyCss', function() {
+gulp.task('copyCss', ['clean'], function() {
   gulp.src(src.css)
   .pipe(gulp.dest(out.build));
 });
 
-gulp.task('stylus', function() {
+gulp.task('stylus', ['clean'], function() {
   gulp.src(src.stylus)
-  .pipe(stylus())
+  .pipe(stylus({use: nib()}))
   .pipe(gulp.dest(out.build));
 });
 
-gulp.task('buildjade', function() {
+gulp.task('buildjade', ['clean'], function() {
 	gulp.src(src.jade)
 	//.pipe(data(function(file) {
 	//	return {
