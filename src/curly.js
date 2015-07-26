@@ -17,9 +17,16 @@ var Curly = {
 			return elem;
 		});
 
-		newWords = vals.map(function(elem) {
-			w[elem.index] = elem.word;
-			return w;
+		var newIndices = vals.concat(i).sort(function(a, b) {
+			// Ascending order
+			return a.index - b.index;
+		})
+		.filter(function(elem, index, list) {
+			return index > 0 ? list[index-1].index !== list[index].index : true;
+		});
+
+		newWords = newIndices.map(function(elem) {
+			return elem.word;
 		});
 
 		return newWords.join(Curly.lineSep);
