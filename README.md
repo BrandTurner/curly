@@ -1,6 +1,6 @@
 ## {{Curly}}
 
-#### A lightweight string interpolatioin tool
+#### A lightweight string interpolation tool
 
 ### TODO
 1. Iterators
